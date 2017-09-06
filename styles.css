@@ -1,4 +1,12 @@
 * {
-	background-color: #fcfcfc;
+	font-family: 'Droid Serif', 'PT Serif', serif;
 	color: #222;
+}
+
+body {
+	background-color: #fcfcfc;
+}
+
+h1 {
+	margin: 15px 0px 15px 0px;
 }
