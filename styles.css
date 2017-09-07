@@ -10,3 +10,20 @@ body {
 h1 {
 	margin: 15px 0px 15px 0px;
 }
+
+label {
+	font-size: 24px;
+	margin: 0;
+}
+
+#msg1, #msg2 {
+	width: 85%;
+    margin: 10px;
+    height: 200px;
+    border: 1px solid #222;
+    resize: none;
+}
+
+textarea {
+    padding: 5px;
+}
