@@ -17,7 +17,7 @@ label {
 }
 
 #msg1, #msg2 {
-	width: 85%;
+	width: 90%;
     margin: 10px;
     height: 200px;
     border: 1px solid #222;
@@ -26,4 +26,18 @@ label {
 
 textarea {
     padding: 5px;
+}
+
+#key-area {
+	margin-top: 15px;
+}
+
+#key-label {
+	margin-right: 15px;
+	display: block;
+}
+
+#key {
+	border: 1px solid #222;
+	width: 75%;
 }
