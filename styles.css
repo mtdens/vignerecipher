@@ -30,6 +30,7 @@ textarea {
 
 #key-area {
 	margin-top: 15px;
+	margin-bottom: 35px;
 }
 
 #key-label {
@@ -40,4 +41,23 @@ textarea {
 #key {
 	border: 1px solid #222;
 	width: 75%;
+}
+
+button {
+    background-color: #037cff;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    padding: 16px;
+    border: 1px solid #222;
+    border-radius: 3px;
+    font-size: 19px;
+    color: #fff;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+    color: #fff;
 }
