@@ -81,4 +81,42 @@ $(document).ready(function(){
  		return code;
  	}
 
+ 	//When encrypt button is clicked
+ 	$("#encode").click(function(){
+
+ 		var encrypt_message = '';
+ 		var message = get_message();
+ 		var key = get_key(); 		
+ 		key = clean_key(key); 		
+
+ 		if(key != ""){ //If key is empty plaintext is displayed
+ 			encrypt_message = cycle(encrypt, message, key);
+ 		}
+ 		else{
+ 			encrypt_message = message;
+ 		}
+
+ 		//Display encrypted message
+ 		$("#msg2").val(encrypt_message);
+ 	});
+
+ 	//When decrypt button is clicked
+ 	$("#decode").click(function(){
+
+ 		var decrypt_message = '';
+ 		var message = get_message();
+ 		var key = get_key(); 		
+ 		key = clean_key(key); 		
+
+ 		if(key != ""){ //If key is empty ciphertext is displayed
+ 			decrypt_message = cycle(decrypt, message, key);
+ 		}
+ 		else{
+ 			decrypt_message = message;
+ 		}
+
+ 		//Display decrypted message
+ 		$("#msg2").val(decrypt_message);
+ 	});
+
 });
