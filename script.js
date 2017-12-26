@@ -16,6 +16,20 @@ $(document).ready(function(){
 		return $('#key').val();
 	}
 
+	function clean_key(key){
+		/*
+		** Takes user inputted key and makes lower case and removes punctuation, numbers, spaces.
+		** Examples: "Hello! This. 3 is a test._ 4" => hellothisisatest or "Ace" => ace
+		** Returns: a string
+		*/
+
+		key = key.replace(/[^\w\s]|_|\d+/g, ''); //Removes punctuation, numbers
+		key = key.split(" ").join(''); //Removes spaces
+		key = key.toLowerCase(); //Makes lower case
+
+		return key;
+	}
+
 	function encrypt(plaintext, key){
 		/*
 		** Takes a plaintext number and a key number and returns their sum
