@@ -40,7 +40,7 @@ $(document).ready(function(){
 
  	function decrypt(ciphertext, key){
  		/*
- 		** Takes a ciphertext number and a key number and returns their differnce
+ 		** Takes a ciphertext number and a key number and returns their difference
  		** Returns: an integer
  		*/
 
@@ -50,6 +50,35 @@ $(document).ready(function(){
  		else{
  			return (ciphertext - key) % 26;
  		}
+ 	}
+
+ 	function cycle(func, message, key){
+ 		/*
+ 		** Goes through each character the message, either plaintext or ciphertext, 
+ 		** calls func, either encrypt or decrypt, on each character with key, returns encrypted or decrypted message
+  		** Retuns: a string
+ 		*/
+
+ 		var lower_case = "abcdefghijklmnopqrstuvwxyz";
+ 		var upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 		var code = "";
+
+ 		for(let i = 0; i < message.length; i++){
+
+ 			if(lower_case.indexOf(message[i]) !== -1){
+ 				num = func(lower_case.indexOf(message[i]), lower_case.indexOf(key[i % key.length]));
+ 				code += lower_case[num];
+ 			}
+ 			else if(upper_case.indexOf(message[i]) !== -1){
+ 				num = func(upper_case.indexOf(message[i]), lower_case.indexOf(key[i % key.length]));
+ 				code += upper_case[num];
+ 			}
+ 			else{
+ 				code += message[i];
+ 			}
+ 		}
+
+ 		return code;
  	}
 
 });
