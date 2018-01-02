@@ -81,42 +81,25 @@ $(document).ready(function(){
  		return code;
  	}
 
- 	//When encrypt button is clicked
- 	$("#encode").click(function(){
+ 	$("#encode, #decode").click(function(){
 
- 		var encrypt_message = '';
+ 		var altered_message = '';
  		var message = get_message();
- 		var key = get_key(); 		
- 		key = clean_key(key); 		
+ 		var key = get_key();
+ 		key = clean_key(key);
+ 		var func = $(this).text().toLowerCase();
+ 		func = eval(func);
 
- 		if(key != ""){ //If key is empty plaintext is displayed
- 			encrypt_message = cycle(encrypt, message, key);
+ 		if(key != ""){ //If key is empty plaintext or ciphertext is displayed
+ 			altered_message = cycle(func, message, key);
  		}
  		else{
- 			encrypt_message = message;
+ 			altered_message = message;
  		}
 
- 		//Display encrypted message
- 		$("#msg2").val(encrypt_message);
- 	});
-
- 	//When decrypt button is clicked
- 	$("#decode").click(function(){
-
- 		var decrypt_message = '';
- 		var message = get_message();
- 		var key = get_key(); 		
- 		key = clean_key(key); 		
-
- 		if(key != ""){ //If key is empty ciphertext is displayed
- 			decrypt_message = cycle(decrypt, message, key);
- 		}
- 		else{
- 			decrypt_message = message;
- 		}
-
- 		//Display decrypted message
- 		$("#msg2").val(decrypt_message);
+ 		//Display encrypted or decrypted message
+ 		$("#msg2").val(altered_message);
+ 		
  	});
 
 });
