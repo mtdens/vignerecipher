@@ -54,9 +54,9 @@ $(document).ready(function(){
 
  	function cycle(func, message, key){
  		/*
- 		** Goes through each character the message, either plaintext or ciphertext, 
+ 		** Goes through each character of the message, either plaintext or ciphertext, 
  		** calls func, either encrypt or decrypt, on each character with key, returns encrypted or decrypted message
-  		** Retuns: a string
+  		** Returns: a string
  		*/
 
  		var lower_case = "abcdefghijklmnopqrstuvwxyz";

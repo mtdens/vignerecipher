@@ -26,7 +26,7 @@
       </div>
       <div class="row text-center">
         <div class="col-12">
-          Directions | History | Mathematics
+          <a href="#directions">Directions</a> | <a href="#history">History</a> | <a href="#mathematics">Mathematics</a>
         </div>
       </div>
     </header>
@@ -43,7 +43,7 @@
       </div>
       <div class="row text-center" id="key-area">
         <div class="col-12 col-md-6 mx-auto">
-          <label id="key-label">Key Word:</label>
+          <label id="key-label">Key:</label>
           <input type="text" id="key">
         </div>
       </div>
@@ -64,7 +64,7 @@
         <div class="col-12">
           <h5>Directions</h5>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            Enter the message you want to encrypt or decrypt in the message textbox. Once you have entered your message, then input your key in the key textbox. The key can be a word or phrase. So "Ace" or "I love this" will be considered valid inputs. Any punctuations, numbers, spacing will be removed when processed. If the key textbox is empty then the message will be displayed unaltered in the Encrypt/Decrypt textbox. After entering a message, a key, then press the encrypt or decrypt button and the result of the encrypting or decrypting process will be displayed in the Encrypt/Decrypt textbox.
           </p>
         </div>
       </div>
@@ -84,10 +84,36 @@
         <div class="col-12">
           <h5>Mathematics</h5>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            If you are familiar with the mathematics of modular arithmetic, then understanding a mathematical representation of what is happening with the Vigenère Cipher should not be that difficult. If we consider our alphabet to be the English alphabet with 26 letters, \(A, B, C,\ldots, Z \), then we can think of associating each letter with an integer in mod 26, for instance, \(A \rightarrow 0, B \rightarrow 1, C \rightarrow 2, \ldots, Z \rightarrow 25 \). Then using this idea we can use addition for encryption and subtraction for decryption.
+          </p> 
+          <p>
+          	Then to encrypt the plaintext we take the \(ith\) letter of the plaintext, denoted \(M_{i}\), and the \(ith\) letter of the key, denoted \(K_{i}\) and add them mod 26, \(M_{i} + K_{i} \bmod{26} \). Then to decrypt the ciphertext we take take the \(ith\) letter of the ciphertext, denoted \(C_{i}\), and the \(ith\) letter of the key, denoted \(K_{i}\) and subtract them mod 26, \(C_{i} - K_{i} \bmod{26} \). So with a key \(K \) the encryption process for a plaintext letter \(M_{i}\) is \(E_{K}\) and the decryption process for a ciphertext letter \(C_{i}\) is \(D_{K}\), which are noted below. 
+          	$$E_{K}(M_{i}) = M_{i} + K_{i} \bmod{26}$$
+          	$$D_{K}(C_{i}) = C_{i} - K_{i} \bmod{26}$$
           </p>
         </div>
       </div>
+
+      <div class="row">
+      	<div class="col-12">
+        	<p>
+      			Below is a vertical representation of the process using a plaintext of 'HoldPosition' and a key of 'Fatal'. If we go from top to bottom, Plaintext then Key then Ciphertext, that's the encryption process. If we go from bottom to top, Ciphertext then Key then Plaintext, that's the decryption process.
+            </p>
+        </div>
+        <div class="mx-auto">
+<pre>
+Plaintext:  HoldPosition 
+Key:        FatalFatalFa
+Ciphertext: MoedAtsbtttn</pre>
+		</div>
+		<div class="col-12">
+        	<p>
+      			Now we will consider an example of when we let our \(i\) be equal to 0 using the same plaintext and key as from above. From this we can then explore \(E_{K}(M_{0})\). We will first note that since our key is the word Fatal then \(K_{0} = F \). Then since the plaintext is HoldPosition, then \(M_{0} = H \). So we have \(E_{K}(M_{0}) = M_{0} + K_{0} \bmod{26}\) is \(E_{K}(M_{0}) = H + F \bmod{26} \) and so \(E_{K}(M_{0}) = 7 + 5 \bmod{26}\) becomes \(E_{K}(M_{0}) = 12 \bmod{26}\). So \(E_{K}(M_{0}) = 12 \) and 12 is M, from the first paragraph, and this means that \(C_{0} = M \). This process is repeated for each letter of the plaintext until the very end. To decrypt a ciphertext just use the ciphertext and subtraction instead of addition.<br>
+            </p>
+        </div>
+
+	  </div>       
+ 
     </section>
     </div>
 
